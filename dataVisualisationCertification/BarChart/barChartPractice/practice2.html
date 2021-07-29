@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<svg id="Viz_area" height=200 width=450></svg>
+<script src='https://d3js.org/d3.v4.js'></script>
+<script>
+    var svg = d3.select('svg')
+    var xScale = d3.scaleLinear()
+                    .domain([0, 100])
+                    .range([0, 400])
+   
+    svg.call(d3.axisBottom(xScale))
+
+    svg.append("circle")
+        .attr("cx", xScale(10))
+        .attr("cy", 100)
+        .attr("r", 40)
+        .style("fill", "blue")
+    
+    svg.append("circle")
+        .attr("cx", xScale(50))
+        .attr("cy", 100)
+        .attr("r", 40)
+        .style("fill", "green")
+
+    svg.append("circle")
+        .attr("cx", xScale(70))
+        .attr("cy", 100)
+        .attr("r", 40)
+        .style("fill", "red")
+</script>
